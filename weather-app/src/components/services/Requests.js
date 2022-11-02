@@ -6,7 +6,7 @@ class Requests {
 		return res;
 	};
 
-    getCity = async () => {
+    getCity = () => {
         return this.getResource('https://api.weatherbit.io/v2.0/current?city_id=292223&key=063eabe9a0434478ae859b859cd39d68');
     }
 
@@ -19,7 +19,9 @@ class Requests {
 		return {
 			name: city.city_name,
 			temp: city.temp,
-			description: city.weather.description
+			description: city.weather.description,
+			time: city.ob_time,
+			timezone: city.timezone
 		}
 	}
 }
