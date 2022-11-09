@@ -31,15 +31,16 @@ class CityList extends React.Component {
 	}
 
 	componentDidMount() {
-		this.updateCondition();
+		this.updateCondition(this.props.src);
 	}
 
-	updateCondition = () => {
-		this.weather.getCity().then((res) => {
+	updateCondition = (url) => {
+		this.weather.getResource(url).then((res) => {
+			console.log(res);
 			this.setState({
 				name: res.data.data[0].city_name,
 				temp: res.data.data[0].temp,
-				description: res.data.data[0].weather.description,
+				description: res.data.data[0].weather.description
 			});
 		});
 	};
@@ -51,7 +52,7 @@ class CityList extends React.Component {
 				origin: {
                     y: 0.4
                 },
-				particleCount: Math.floor(130 * particleRatio),
+				particleCount: Math.floor(120 * particleRatio),
 			});
 	};
 
@@ -59,12 +60,17 @@ class CityList extends React.Component {
 		this.makeShot(0.25, {
 			spread: 10,
 			startVelocity: 95,
+			scalar: 0.5,
+			drift: -0.1,
+			ticks: 333,
+			colors: ['#dc143c'],
+			shapes: ['circle']
 		});
 
 		this.makeShot(0.35, {
-			spread: 100,
+			spread: 105,
 			scalar: 0.8,
-            ticks: 300
+            ticks: 330
 		});
 	};
 

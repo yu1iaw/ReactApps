@@ -6,9 +6,9 @@ class Requests {
 		return res;
 	};
 
-    getCity = () => {
-        return this.getResource('https://api.weatherbit.io/v2.0/current?city_id=292223&key=063eabe9a0434478ae859b859cd39d68');
-    }
+    // getCity = () => {
+    //     return this.getResource('https://api.weatherbit.io/v2.0/current?city_id=292223&key=063eabe9a0434478ae859b859cd39d68');
+    // }
 
 	getAllCities = async () => {
 		const res = await this.getResource('https://api.weatherbit.io/v2.0/current?cities=1250161%2C%201154689%2C%202800866%2C%203081368%2C%20702550%2C%20703448&key=063eabe9a0434478ae859b859cd39d68');
