@@ -18,13 +18,21 @@ const CitiesList = () => {
 	const weather = new Requests();
 
 	useEffect(() => {
-			weather.getAllCities().then((res) => {
+		getConditions();
+		const timerId = setInterval(getConditions, 1800000);
+		return () => {
+			clearInterval(timerId);
+		}
+	}, [])
+
+	const getConditions = () => {
+		weather.getAllCities().then((res) => {
 			res.sort((a, b) => b.name.length - a.name.length);
 			let pop = res.pop();
 			res.splice(3, 0, pop);
 			setCitiesArr(res);
 		});
-	}, [])
+	}
 
 	const modifiedList = (arr) => {
 		const items = arr.map((item, index) => {
