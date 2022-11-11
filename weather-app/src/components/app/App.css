@@ -51,28 +51,3 @@ li:only-child:active {
     box-shadow: 0px 4px 10px grey, 0px -2px 5px rgba(0, 0, 0, 0.17);
     transform: translateY(2px);
 }
-
-svg {
-    fill: darkgrey;
-    position: absolute;
-}
-
-.first {
-    top: 4px;
-    left: 4px;
-}
-
-.sec {
-    bottom: 4px;
-    left: 4px;
-}
-
-.third {
-    top: 4px;
-    right: 4px;
-}
-
-.fourth {
-    bottom: 4px;
-    right: 4px;
-}
