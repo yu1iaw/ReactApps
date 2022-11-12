@@ -1,0 +1,7 @@
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: salmon;
+    padding: 50px;
+    border-radius: 5px;
+}

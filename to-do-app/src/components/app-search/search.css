@@ -1,0 +1,13 @@
+.search {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: darkcyan;
+    border-radius: 5px;
+    color: white;
+}
+
+::placeholder {
+    font-family: 'El Messiri', sans-serif;
+}
+
+

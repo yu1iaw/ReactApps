@@ -1,0 +1,71 @@
+.list-group-item {
+    padding: 15px 20px;
+    background-color: #d9bfbf;
+    border-bottom: 1px solid floralwhite;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item span {
+    font-family: 'Caveat', cursive;
+    color: rgb(43, 40, 40);
+    line-height: 35px;
+    font-size: 30px;
+    cursor: pointer;
+    min-width: 80%;
+}
+
+.list-group-item.asap.done .list-group-item-label {
+    text-shadow: none;
+}
+
+.list-group-item.asap.done .btn-star {
+    color: rgba(248, 248, 255, 0.7); 
+}
+
+.d-flex.align-items-center {
+    width: 16%;
+    justify-content: space-between;
+}
+
+.list-group-item button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+}
+
+.list-group-item .btn-star {
+    font-size: 20px;
+    color: rgba(248, 248, 255, 0.7);   
+}
+
+.list-group-item .btn-trash {
+    font-size: 20px;
+    color: #3289b3;
+}
+
+.list-group-item.done svg {
+    fill: #7FFF00;
+}
+
+.list-group-item.done {
+    background-color: LightSeaGreen ;
+}
+
+.list-group-item.asap .list-group-item-label {
+    color: black;
+    text-shadow: 1px 0px black;
+}
+  
+.list-group-item.asap .btn-star {
+    color: #C71585;
+}
+
