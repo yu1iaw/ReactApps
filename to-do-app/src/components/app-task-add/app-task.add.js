@@ -1,4 +1,5 @@
 import React from "react";
+import nextId from "react-id-generator";
 
 import "./app-task-add.css";
 
@@ -8,8 +9,9 @@ class AddTask extends React.Component {
 		this.state = {
 			task: ''
 		}
+		this.id = nextId('1');
 	}
-
+	
 
 	onValueChange = (e) => {
 		this.setState({
@@ -20,7 +22,7 @@ class AddTask extends React.Component {
 	onSubmit = (e) => {
 		e.preventDefault();
 		if (this.state.task.length < 5) return;
-		this.props.onAdd(this.state.task);
+		this.props.onAdd(this.state.task, this.id++);
 		this.setState({
 			task: ''
 		})
