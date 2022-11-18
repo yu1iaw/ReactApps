@@ -6,6 +6,34 @@
     color: white;
 }
 
+h3 {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 25px;
+}
+
 .add-form input {
     margin-right: 20px;
+}
+
+@media (min-width: 360px) and (max-width: 500px) {
+    .app-add-form {
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    .mt-4 {
+        margin-top: 1rem!important;
+    }
+
+    .btn[type='submit'] {
+        width: 50%;
+        margin: 15px 50% 0;
+    }
 }

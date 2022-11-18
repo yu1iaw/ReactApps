@@ -16,3 +16,22 @@ h2 {
     font-size: 25px;
     line-height: 40px;
 }
+
+
+@media (min-width: 360px) and (max-width: 500px) {
+    .header {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 19px;
+        line-height: 26px;
+        font-family: 'El Messiri', sans-serif;
+    }
+
+    h2:last-of-type {
+        font-size: 18px;
+    }
+
+
+}

@@ -3,3 +3,11 @@
     line-height: 25px;
     padding: 8px 15px;
 }
+
+@media (min-width: 360px) and (max-width: 500px) {
+    .btn {
+        line-height: 15px;
+        padding: 12px 4px;
+        font-size: smaller;
+    }
+}

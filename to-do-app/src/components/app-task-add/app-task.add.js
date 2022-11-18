@@ -1,5 +1,5 @@
 import React from "react";
-import nextId from "react-id-generator";
+import 'animate.css';
 
 import "./app-task-add.css";
 
@@ -9,11 +9,17 @@ class AddTask extends React.Component {
 		this.state = {
 			task: ''
 		}
-		this.id = nextId('1');
+		this.myRef = React.createRef();
 	}
 	
-
 	onValueChange = (e) => {
+		if (e.target.value === '') this.myRef.current.style.backgroundColor = '';
+		else if (e.target.value.length < 5 || e.target.value.length > 50 || (window.screen.width < 500 && e.target.value.length > 45)) {
+			this.myRef.current.style.backgroundColor = '#ff6666';
+		} else {
+			this.myRef.current.style.backgroundColor = '';
+		}
+
 		this.setState({
 			task: e.target.value
 		})
@@ -21,8 +27,14 @@ class AddTask extends React.Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		if (this.state.task.length < 5) return;
-		this.props.onAdd(this.state.task, this.id++);
+		if (this.state.task.length < 5 || this.state.task.length > 50 || (window.screen.width < 500 && this.state.task.length > 45)) {
+			this.myRef.current.classList.add('animate__animated', 'animate__shakeX');
+			this.myRef.current.style.backgroundColor = '#ff6666';
+			return;
+		} else {
+			this.myRef.current.classList.remove('animate__animated', 'animate__shakeX');
+		}
+		this.props.onAdd(this.state.task, Math.floor(Math.random() * (1000 - 7) + 7));
 		this.setState({
 			task: ''
 		})
@@ -34,6 +46,7 @@ class AddTask extends React.Component {
 				<h3>Додати завдання</h3>
 				<form className="add-form mt-4 d-flex" onSubmit={this.onSubmit}>
 					<input type="text"
+						   ref={this.myRef}
 						   className="form-control new-post-label"
 						   placeholder="Ти зможеш все :)"
 						   value={this.state.task}

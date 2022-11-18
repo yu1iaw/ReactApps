@@ -1,7 +1,13 @@
 .app {
     max-width: 1000px;
     margin: 0 auto;
-    background-color: salmon;
+    background-color: cornsilk;
     padding: 50px;
     border-radius: 5px;
+}
+
+@media (min-width: 360px) and (max-width: 500px) {
+    .app {
+        padding: 20px;
+    }
 }

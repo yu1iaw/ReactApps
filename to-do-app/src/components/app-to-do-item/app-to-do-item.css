@@ -29,7 +29,8 @@
     line-height: 35px;
     font-size: 30px;
     cursor: pointer;
-    min-width: 80%;
+    min-width: 75%;
+    word-wrap: break-word;
 }
 
 .list-group-item.asap.done .list-group-item-label {
@@ -41,7 +42,7 @@
 }
 
 .d-flex.align-items-center {
-    width: 16%;
+    min-width: 120px;
     justify-content: space-between;
 }
 
@@ -55,6 +56,7 @@
     line-height: 30px;
     text-align: center;
     padding: 0;
+    margin-right: 14px;
 }
 
 .list-group-item .btn-star {
@@ -82,5 +84,35 @@
   
 .list-group-item.asap .btn-star {
     color: #C71585;
+}
+
+@media (min-width: 360px) and (max-width: 500px) {
+    .list-group-item {
+        padding: 8px 12px;
+        align-items: center;
+    }
+
+    .list-group-item span {
+        font-size: 22px;
+        line-height: 20px;
+        min-width: 69%;
+        max-width: 203px;
+    }
+
+    .list-group-item .btn-sm {
+        font-size: 15px;
+        margin-left: 10px;
+        margin-right: 0;
+        
+    }
+
+    svg {
+        width: 34px;
+        overflow: visible;
+    }
+
+    .d-flex.align-items-center {
+        min-width: 95px;
+    }
 }
 
