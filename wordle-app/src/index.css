@@ -150,8 +150,6 @@ p {
 
 .modal {
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
   position: fixed;
   width: 100%;
@@ -160,7 +158,6 @@ p {
   left: 0;
 }
 .modal .container {
-  position: relative;
   max-width: 300px;
   background: #fff;
   background-image: url('images/pngwing.com.png');
@@ -171,6 +168,10 @@ p {
   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
   box-sizing: border-box;
   overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
 }
 .modal .innerBox {
   background-color: rgba(255, 255, 255, 0.7);
@@ -195,6 +196,7 @@ p {
 }
 
 .innerBox h1 {
+  font-size: 1.1em;
   margin: 0;
   padding: 10px;
 }
@@ -241,10 +243,17 @@ p > span {
 }
 
 @media screen and (max-width: 850px) and (orientation: landscape) {
+  header {
+    background-image: url('images/Flag-of-the-United-Kingdom.svg'), url('images/Flag-of-the-United-Kingdom.svg');
+    background-color: white;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, right;
+    background-size: auto;
+  }
   h1 {
     margin: 0 0 5px;
     padding: 5px;
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .row > div {
     width: 30px;
