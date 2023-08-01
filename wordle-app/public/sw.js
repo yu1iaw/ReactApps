@@ -1,13 +1,15 @@
-const staticCache = 'wordle-v2';
+const staticCache = 'wordle-v2.1';
 const dynamicCache = 'dynamic-wordle-v1';
 const urls = [
-    '/static/js/main.33e61456.chunk.js',
-    '/static/js/2.ca1eb2e5.chunk.js',
-    '/static/css/main.8596c477.chunk.css',
+    '/static/js/main.d77cd303.chunk.js',
+    '/static/js/2.5ca26764.chunk.js',
+    '/static/css/main.244baeb0.chunk.css',
     '/static/media/Flag-of-the-United-Kingdom.330b4363.svg',
     '/static/media/pngwing.com.b015d31c.png',
     '/index.html',
-    '/'
+    '/',
+    '/manifest.json',
+    '/favicon.ico'
 ];
 
 self.addEventListener('install', async (e) => {

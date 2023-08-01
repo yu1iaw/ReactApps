@@ -206,6 +206,14 @@ p > span {
   font-size: larger;
 }
 
+.loader-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @keyframes flip {
   0% {
@@ -296,7 +304,6 @@ p > span {
     display: inline-block;
     border-radius: 6px;
     line-height: 55px;
-    font-size: 20px;
   }
   .keypad .funcBtns {
     font-size: 18px

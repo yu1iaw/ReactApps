@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import GridLoader from "react-spinners/GridLoader";
 
 import useWordle from "./hooks/useWordle";
 import { Wordle } from "./components/Wordle";
@@ -6,8 +7,9 @@ import { Wordle } from "./components/Wordle";
 
 function App() {
   const [solution, setSolution] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { getCitiesData } = useWordle();
-
+  
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +20,8 @@ function App() {
         
       } catch (e) {
         console.log(e);
+      } finally {
+        setLoading(false);
       }
     };
   
@@ -33,7 +37,13 @@ function App() {
           <h1>Wordle City</h1>
         </div>
       </header>
-      { solution && <Wordle solution={solution} setSolution={setSolution} />  }
+      {loading ? (
+        <div className="loader-container">
+          <GridLoader color="#ff6933" size={window.innerWidth > 850 ? 23 : 14} />
+        </div>
+      ) : (
+        solution && <Wordle solution={solution} setSolution={setSolution} />  
+      )}
 		</div>
 	);
 }
